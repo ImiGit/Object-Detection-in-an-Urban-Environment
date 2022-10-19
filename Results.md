@@ -17,6 +17,7 @@ This section should detail the cross validation strategy and justify your approa
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
 ![Loss Curve Without Outliers](Graphs/Experiment_0/loss_curve_outliers_off.PNG)
 ![Loss Curve With Outliers](Graphs/Experiment_0/loss_curve_outliers_on.PNG)
+<img src="Graphs/Experiment_0/loss_curve_outliers_off.PNG" alt="Loss Curve Without Outliers" width="200"/>
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
