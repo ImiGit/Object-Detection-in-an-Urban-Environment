@@ -34,7 +34,8 @@ This section should detail the cross validation strategy and justify your approa
 
 ### Training
 #### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+First experiment, `Experiment 0`, was performed using the [pretrained SSD Resnet 50 640x640 model](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz). The original config file was modified to have batch size of 2 and access the training and evaluation data.
+
 ![Loss Curve Without Outliers](Graphs/Experiment_0/loss_curve_outliers_off.PNG)
 ![Loss Curve With Outliers](Graphs/Experiment_0/loss_curve_outliers_on.PNG)
 
