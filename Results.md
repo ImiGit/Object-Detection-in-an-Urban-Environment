@@ -155,9 +155,13 @@ I kept the data augmentations as before and changed only the `learning_rate` to 
       }
 ```
 ##### Results
-The results got better compared to the previous experiment, however still the total loss is around two times the reference experiment.
+The results got better compared to the previous experiment, however still the total loss is around twenty times the reference model.
+
+<img src="Graphs/Experiment_2/loss_curves.PNG" alt="Learning curves per steps of the training process for the second trial." title="Learning curves per steps of the training process for the second trial." width="800"/>
+
 
 #### Experiment 3
+
 
 ##### Preparations 
 For this improvement trial, I will experiment with the the model's architecture and try different pretrained model from the Tf Object Detection APIs available on [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md). I have chosen [Faster R-CNN Inception ResNet V2 640x640](http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_inception_resnet_v2_640x640_coco17_tpu-8.tar.gz) model and uploaded it in the pretrained directory of the working environment. With a tiny change in the code to make the new `pipeline.config` file as below, I performed the training.
