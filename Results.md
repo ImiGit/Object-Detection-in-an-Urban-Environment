@@ -53,6 +53,7 @@ As explained by the Udacity team in the [README file](README.md) we have three o
 3. Experimenting with the architecture. The Tf Object Detection API [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md), for example.
 
 #### Experiment 01
+
 ##### Preparations
 For the first improvement, I will use the below image augmentations:
 * `random_horizontal_flip ` with probability = 0.5
@@ -139,6 +140,7 @@ The learning rate graph shows how it has changed over the steps for the training
 Since in the beginning steps we had better losses, I will use an ... 
 
 #### Experiment 2
+
 ##### Preparations
 I kept the data augmentations as before and changed only the `learning_rate` to the previous cosine decay model. 
 
@@ -156,11 +158,14 @@ I kept the data augmentations as before and changed only the `learning_rate` to 
 The results got better compared to the previous experiment, however still the total loss is around two times the reference experiment.
 
 #### Experiment 3
+
 ##### Preparations 
 For this improvement trial, I will experiment with the the model's architecture and try different pretrained model from the Tf Object Detection APIs available on [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md). I have chosen [Faster R-CNN Inception ResNet V2 640x640](http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_inception_resnet_v2_640x640_coco17_tpu-8.tar.gz) model and uploaded it in the pretrained directory of the working environment. With a tiny change in the code to make the new `pipeline.config` file as below, I performed the training.
 
 ```
 python edit_config.py --train_dir /home/workspace/data/train/ --eval_dir /home/workspace/data/val/ --batch_size 2 --checkpoint /home/workspace/experiments/pretrained_model/faster_rcnn_inception_resnet_v2_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map /home/workspace/experiments/label_map.pbtxt
 ```
+Also, inside the config file I assign the `num_classes: 3` to match our dataset. This model takes almost 4 times longer to be trained.
 
 ##### Results
+
