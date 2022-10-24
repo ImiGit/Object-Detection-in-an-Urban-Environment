@@ -169,7 +169,8 @@ For this improvement trial, I will experiment with the the model's architecture 
 ```
 python edit_config.py --train_dir /home/workspace/data/train/ --eval_dir /home/workspace/data/val/ --batch_size 2 --checkpoint /home/workspace/experiments/pretrained_model/faster_rcnn_inception_resnet_v2_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map /home/workspace/experiments/label_map.pbtxt
 ```
-Also, inside the config file I assign the `num_classes: 3` to match our dataset. This model takes almost 4 times longer to be trained.
+
+This model takes almost 4 times longer to be trained and uses more memory, I encountered "No space left on device" error couple of times. Therefore, I have decreased the number of steps to 1700.
 
 ##### Results
 
