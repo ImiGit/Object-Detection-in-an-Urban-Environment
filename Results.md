@@ -170,7 +170,12 @@ For this improvement trial, I will experiment with the the model's architecture 
 python edit_config.py --train_dir /home/workspace/data/train/ --eval_dir /home/workspace/data/val/ --batch_size 2 --checkpoint /home/workspace/experiments/pretrained_model/faster_rcnn_inception_resnet_v2_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map /home/workspace/experiments/label_map.pbtxt
 ```
 
-This model takes almost 4 times longer to be trained and uses more memory, I encountered "No space left on device" error couple of times. Therefore, I have decreased the number of steps to 1700.
+This model takes almost 4 times longer to be trained and their checkpoints consumes almost all the memory that I encountered "No space left on device" error couple of times. Therefore, I have decreased the number of steps to 1500.
 
 ##### Results
 
+The image below shows the loss curves obtained by this architecture.
+
+<img src="Graphs/Experiment_3/loss_curves.PNG" alt="Learning curves per steps of the training process for the second trial." title="Learning curves per steps of the training process for the second trial." width="800"/>
+
+Compared to the previous experiments, here we see lower training losses, ~ 2, and evaluation loss of 5.268. These are better results than the previous experiments and I will use this architecture to save the model and continue with the project. 
