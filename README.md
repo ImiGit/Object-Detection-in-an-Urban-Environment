@@ -1,27 +1,26 @@
 # Object Detection in an Urban Environment
+Final project in the [Udacity](https://www.udacity.com/) Data Scientist Nanodegree program.
+by **Iman Babaei**
+
+
 
 ## Data
 
-For this project, we will be using data from the [Waymo Open dataset](https://waymo.com/open/).
-
-[OPTIONAL] - The files can be downloaded directly from the website as tar files or from the [Google Cloud Bucket](https://console.cloud.google.com/storage/browser/waymo_open_dataset_v_1_2_0_individual_files/) as individual tf records. We have already provided the data required to finish this project in the workspace, so you don't need to download it separately.
+For this project, data from the [Waymo Open dataset](https://waymo.com/open/) was already provided in the workspace, so I did not need to download it separately.
 
 ## Structure
 
 ### Data
 
-The data you will use for training, validation and testing is organized as follow:
+The data I used for training, validation and testing was organized as follow:
 ```
-/home/workspace/data/waymo
-    - training_and_validation - contains 97 files to train and validate your models
-    - train: contain the train data (empty to start)
-    - val: contain the val data (empty to start)
+/home/workspace/data
+    - train: contain the train data 
+    - val: contain the val data 
     - test - contains 3 files to test your model and create inference videos
 ```
 
-The `training_and_validation` folder contains file that have been downsampled: we have selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
-
-You will split this `training_and_validation` data into `train`, and `val` sets by completing and executing the `create_splits.py` file.
+The `train` and `val` folders contain files that have been downsampled: we have selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
 
 ### Experiments
 The experiments folder will be organized as follow:
@@ -38,31 +37,6 @@ experiments/
     ...
 ```
 
-## Prerequisites
-
-### Local Setup
-
-For local setup if you have your own Nvidia GPU, you can use the provided Dockerfile and requirements in the [build directory](./build).
-
-Follow [the README therein](./build/README.md) to create a docker container and install all prerequisites.
-
-### Download and process the data
-
-**Note:** ”If you are using the classroom workspace, we have already completed the steps in the section for you. You can find the downloaded and processed files within the `/home/workspace/data/preprocessed_data/` directory. Check this out then proceed to the **Exploratory Data Analysis** part.
-
-The first goal of this project is to download the data from the Waymo's Google Cloud bucket to your local machine. For this project, we only need a subset of the data provided (for example, we do not need to use the Lidar data). Therefore, we are going to download and trim immediately each file. In `download_process.py`, you can view the `create_tf_example` function, which will perform this processing. This function takes the components of a Waymo Tf record and saves them in the Tf Object Detection api format. An example of such function is described [here](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html#create-tensorflow-records). We are already providing the `label_map.pbtxt` file.
-
-You can run the script using the following command:
-```
-python download_process.py --data_dir {processed_file_location} --size {number of files you want to download}
-```
-
-You are downloading 100 files (unless you changed the `size` parameter) so be patient! Once the script is done, you can look inside your `data_dir` folder to see if the files have been downloaded and processed correctly.
-
-### Classroom Workspace
-
-In the classroom workspace, every library and package should already be installed in your environment. You will NOT need to make use of `gcloud` to download the images.
-
 ## Instructions
 
 ### Exploratory Data Analysis
@@ -70,17 +44,6 @@ In the classroom workspace, every library and package should already be installe
 You should use the data already present in `/home/workspace/data/waymo` directory to explore the dataset! This is the most important task of any machine learning project. To do so, open the `Exploratory Data Analysis` notebook. In this notebook, your first task will be to implement a `display_instances` function to display images and annotations using `matplotlib`. This should be very similar to the function you created during the course. Once you are done, feel free to spend more time exploring the data and report your findings. Report anything relevant about the dataset in the writeup.
 
 Keep in mind that you should refer to this analysis to create the different spits (training, testing and validation).
-
-
-### Create the training - validation splits
-In the class, we talked about cross-validation and the importance of creating meaningful training and validation splits. For this project, you will have to create your own training and validation sets using the files located in `/home/workspace/data/waymo`. The `split` function in the `create_splits.py` file does the following:
-* create three subfolders: `/home/workspace/data/train/`, `/home/workspace/data/val/`, and `/home/workspace/data/test/`
-* split the tf records files between these three folders by symbolically linking the files from `/home/workspace/data/waymo/` to `/home/workspace/data/train/`, `/home/workspace/data/val/`, and `/home/workspace/data/test/`
-
-Use the following command to run the script once your function is implemented:
-```
-python create_splits.py --data-dir /home/workspace/data
-```
 
 ### Edit the config file
 
