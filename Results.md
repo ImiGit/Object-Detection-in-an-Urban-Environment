@@ -183,3 +183,5 @@ Compared to the previous experiments, here we see lower training losses, ~ 2, an
 Finally, below is the animation using the saved the model on one the test objects.
 
 <img src="Graphs/animation.gif" alt="Animation of the saved model detecting object in the real world environment." title="Animation of the saved model detecting object in the real world environment." width="800"/>
+
+It can be noticed also from this animation that our model requires more improvements. Some cars in the dark and distant are not detected, also some signs are detected as cars which is obviously wrong. Two more animations are saved in the graphs folder. One is [during the day on a flat street](Graphs/animation_2.gif) and the other one is [on a curved sloppy road](Graphs/animation_3.gif). In these two animations we can see that some houses, traffic signs, and even pedestrian crossing lines are detected as cars!
