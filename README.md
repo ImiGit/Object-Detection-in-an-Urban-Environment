@@ -12,29 +12,72 @@ For this project, data from the [Waymo Open dataset](https://waymo.com/open/) wa
 
 ### Data
 
-The data I used for training, validation and testing was organized as follow:
+The data I used for training, validation and testing was organized as below on ***my working space***:
 ```
 /home/workspace/data
     - train: contain the train data 
     - val: contain the val data 
-    - test - contains 3 files to test your model and create inference videos
+    - test: contains 3 files to test your model and create inference videos
 ```
 
-The `train` and `val` folders contain files that have been downsampled: we have selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
+The `train` and `val` folders contained files that have been downsampled: they have been selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
 
-### Experiments
+### build
+The build folder contains the necessary file and instruction to run the project on a docker:
+```
+build/
+    - Dockerfile
+    - README.md
+    - requirements.txt
+```
+
+### experiments
 The experiments folder will be organized as follow:
 ```
 experiments/
-    - pretrained_model/
     - exporter_main_v2.py - to create an inference model
     - model_main_tf2.py - to launch training
-    - reference/ - reference training with the unchanged config file
-    - experiment0/ - create a new folder for each experiment you run
-    - experiment1/ - create a new folder for each experiment you run
-    - experiment2/ - create a new folder for each experiment you run
     - label_map.pbtxt
-    ...
+```
+### Graphs
+
+```
+Graphs/
+    - Experiment_0: - Results of the pretrained reference model.
+        - DetectionBoxes_precision.PNG
+        - DetectionBoxes_recall.PNG
+        - Learning_rate.PNG
+        - learning_rate.svg
+        - loss_curve_outliers_off.PNG
+        - loss_curve_outliers_on.PNG
+    - Experiment_1: - Results of the first trial to improve the model by adding augmentations.
+        - image_01.png
+        - image_02.png
+        - image_03.png
+        - image_04.png
+        - learning_rate.svg
+        - loss_curves.png
+    - Experiment_2: - Results of the second trial to improve the model.
+        - loss_curves.PNG
+    - Experiment_3: - Results of the third trial to improve the model by changing the model to faster rccn.
+        - loss_curves.PNG
+    - animation.gif - Animated results of the saved model
+    - animation_2.gif - Animated results of the saved model
+    - animation_3.gif - Animated results of the saved model
+    - dataset-classes_01.png
+    - dataset-classes_bicycles.png
+    - dataset-classes_cars.png
+    - dataset-classes_pedestrians.png
+    - dataset-image_01.png - Example of an image from dataset.
+    - dataset-image_02.png - Example of an image from dataset.
+    - dataset-image_03.png - Example of an image from dataset.
+    - dataset-image_04.png - Example of an image from dataset.
+    - dataset-image_05.png - Example of an image from dataset.
+    - dataset-image_06.png - Example of an image from dataset.
+    - dataset-image_07.png - Example of an image from dataset.
+    - dataset-image_08.png - Example of an image from dataset.
+    - dataset-image_09.png - Example of an image from dataset.
+    - dataset-image_10.png - Example of an image from dataset.
 ```
 
 ## Instructions
