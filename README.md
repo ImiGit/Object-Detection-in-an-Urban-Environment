@@ -22,23 +22,6 @@ The data I used for training, validation and testing was organized as below on *
 
 The `train` and `val` folders contained files that have been downsampled: they have been selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
 
-### build
-The build folder contains the necessary file and instruction to run the project on a docker:
-```
-build/
-    - Dockerfile
-    - README.md
-    - requirements.txt
-```
-
-### experiments
-The experiments folder will be organized as follow:
-```
-experiments/
-    - exporter_main_v2.py - to create an inference model
-    - model_main_tf2.py - to launch training
-    - label_map.pbtxt
-```
 ### Graphs
 
 This folder contains the results for the pre-trained reference experiment and trials to improve the results. Refer to the [Results.md file](Results.md) for in depth analysis of these files.
@@ -80,6 +63,24 @@ Graphs/
     - dataset-image_08.png - Example of an image from dataset.
     - dataset-image_09.png - Example of an image from dataset.
     - dataset-image_10.png - Example of an image from dataset.
+```
+
+### build
+The build folder contains the necessary file and instruction to run the project on a docker:
+```
+build/
+    - Dockerfile
+    - README.md
+    - requirements.txt
+```
+
+### experiments
+The experiments folder will be organized as follow:
+```
+experiments/
+    - exporter_main_v2.py - to create an inference model
+    - model_main_tf2.py - to launch training
+    - label_map.pbtxt
 ```
 
 ### Other files
