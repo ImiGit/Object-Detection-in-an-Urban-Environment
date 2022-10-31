@@ -178,4 +178,8 @@ The image below shows the loss curves obtained by this architecture.
 
 <img src="Graphs/Experiment_3/loss_curves.PNG" alt="Learning curves per steps of the training process for the second trial." title="Learning curves per steps of the training process for the second trial." width="800"/>
 
-Compared to the previous experiments, here we see lower training losses, ~ 2, and evaluation loss of 5.268. These are better results than the previous experiments and I will use this architecture to save the model and continue with the project. 
+Compared to the previous experiments, here we see lower training losses, ~ 2, and evaluation loss of 5.268. These are better results than the previous experiments and I will use this architecture to save the model and continue with the project.
+
+Finally, below is the animation using the saved the model on one the test objects.
+
+<img src="Graphs/animation.gif" alt="Animation of the saved model detecting object in the real world environment." title="Animation of the saved model detecting object in the real world environment." width="800"/>
