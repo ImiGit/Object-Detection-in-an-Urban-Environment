@@ -41,6 +41,8 @@ experiments/
 ```
 ### Graphs
 
+This folder contains the results for the pre-trained reference experiment and trials to improve the results. Refer to the [Results.md file](Results.md) for in depth analysis of these files.
+
 ```
 Graphs/
     - Experiment_0: - Results of the pretrained reference model.
@@ -80,11 +82,31 @@ Graphs/
     - dataset-image_10.png - Example of an image from dataset.
 ```
 
+### Other files
+
+```
+- .gitignore - files and paths that git will ignore
+- CODEOWNERS
+- create_splits.py
+- download_process.py
+- edit_config.py - Python file used to edit pipeline.config and make new one
+- Exploratory Data Analysis.ipynb - Jupyter notebook used for exploratory data analysis
+- Explore augmentations.ipynb - Jupyter notebook showing the augmentations on the dataset files.
+- filenames.txt
+- inference_video.py
+- label_map.pbtxt
+- LICENSE.md
+- pipeline.config
+- README.md
+- Results.md - Write-up file containing the results of the project.
+- utils.py
+```
+
 ## Instructions
 
 ### Exploratory Data Analysis
 
-You should use the data already present in `/home/workspace/data/waymo` directory to explore the dataset! This is the most important task of any machine learning project. To do so, open the `Exploratory Data Analysis` notebook. In this notebook, your first task will be to implement a `display_instances` function to display images and annotations using `matplotlib`. This should be very similar to the function you created during the course. Once you are done, feel free to spend more time exploring the data and report your findings. Report anything relevant about the dataset in the writeup.
+You should use the data already present in `/home/workspace/data` directory to explore the dataset! This is the most important task of any machine learning project. To do so, open the `Exploratory Data Analysis` notebook. In this notebook, your first task will be to implement a `display_instances` function to display images and annotations using `matplotlib`. This should be very similar to the function you created during the course. Once you are done, feel free to spend more time exploring the data and report your findings. Report anything relevant about the dataset in the writeup.
 
 Keep in mind that you should refer to this analysis to create the different spits (training, testing and validation).
 
@@ -143,24 +165,3 @@ Finally, you can create a video of your model's inferences for any tf record fil
 ```
 python inference_video.py --labelmap_path label_map.pbtxt --model_path experiments/reference/exported/saved_model --tf_record_path /data/waymo/testing/segment-12200383401366682847_2552_140_2572_140_with_camera_labels.tfrecord --config_path experiments/reference/pipeline_new.config --output_path animation.gif
 ```
-
-## Submission Template
-
-### Project overview
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
-
-### Set up
-This section should contain a brief description of the steps to follow to run the code for this repository.
-
-### Dataset
-#### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
-#### Cross validation
-This section should detail the cross validation strategy and justify your approach.
-
-### Training
-#### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
-
-#### Improve on the reference
-This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
